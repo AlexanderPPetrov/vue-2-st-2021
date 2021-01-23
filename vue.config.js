@@ -8,5 +8,6 @@ module.exports = {
         }
       },
       sourceMap:true,
-    }
-  };
+    },
+    runtimeCompiler: true,
+};
