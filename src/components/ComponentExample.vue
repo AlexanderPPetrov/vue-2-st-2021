@@ -15,6 +15,8 @@
         <div>
             {{ getCount }}
         </div>
+        <div>{{ getResult(2, 3) }}</div>
+        <div>{{ getResult(3, 6) }}</div>
     </div>
 </template>
 
@@ -57,8 +59,11 @@ export default {
         }
     },
     methods: {
+        getResult(a, b){
+            return a + b;
+        },
         startPushingItems(){
-            setInterval(() => {
+            setTimeout(() => {
                 this.testData.push({
                     title: 'More data',
                     count: 5,

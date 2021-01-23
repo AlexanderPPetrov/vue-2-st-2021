@@ -1,17 +1,49 @@
 <template>
-  <div id="app">
-    <component-example></component-example>
-    <div class="component">Div in App.vue</div>
+  <div>
+    <navbar></navbar>
+    <div class="container">
+      <div class="row mt-5">
+          <product v-for="(item, index) in items"
+            :key="index"
+            :title="item.title"
+            :description="item.description"
+            :image="item.image"
+          ></product>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import ComponentExample from './components/ComponentExample';
+import Navbar from './components/navbar/Navbar';
+import Product from './components/product/Product';
 
 export default {
   name: 'App',
   components: {
-    ComponentExample,
+    Navbar,
+    Product,
+  },
+  data(){
+    return {
+      items: [
+        {
+          title: 'test',
+          description: 'tralala',
+          image: 'https://picsum.photos/600/300/?image=25',
+        },
+        {
+          title: 'test title 2',
+          description: '222 tralala aaa',
+          image: 'https://picsum.photos/600/300/?image=25',
+        },
+        {
+          title: 'test title 3',
+          description: '333 tralala aa 333',
+          image: 'https://picsum.photos/600/300/?image=25',
+        },
+      ]
+    }
   }
 }
 

@@ -12,7 +12,10 @@ export default {
     name: 'another-component',
     props: {
         title: String,
-        subtitle: String,
+        subtitle: {
+            default: 'A',
+            type: String,
+        },
     },
     created(){
         console.log(this.title);
