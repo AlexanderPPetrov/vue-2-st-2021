@@ -44,6 +44,19 @@ export default {
             return this.$store.state.apples;
         }
     },
+    watch: {
+        getApplesTotalPrice: {
+            handler: function(value, prevValue){
+                console.log('----->', value, prevValue);
+                if(value > 15){
+                    // call a method
+                    console.log('value is above 15');
+                }
+            },
+            immediate: true,
+            // deep: true,
+        }
+    },
     methods: {
         setApples(quantity){
             this.$store.commit(mutations.SET_APPLES, this.getApples + quantity);
